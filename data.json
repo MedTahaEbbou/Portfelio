@@ -1,0 +1,401 @@
+{
+  "menuLinks": [
+    {
+      "id": "nav_profile",
+      "url": "#about",
+      "text": {
+        "en": "Profile",
+        "fr": "Profil",
+        "ar": "الملف المهني"
+      }
+    },
+    {
+      "id": "nav_experience",
+      "url": "#experience",
+      "text": {
+        "en": "Experience",
+        "fr": "Expérience",
+        "ar": "الخبرة المهنية"
+      }
+    },
+    {
+      "id": "nav_activities",
+      "url": "/activities/",
+      "text": {
+        "en": "Activities",
+        "fr": "Activités",
+        "ar": "النشاطات والأخبار"
+      }
+    },
+    {
+      "id": "nav_contact",
+      "url": "#contact",
+      "text": {
+        "en": "Contact",
+        "fr": "Contact",
+        "ar": "اتصل بي"
+      }
+    }
+  ],
+  "translations": {
+    "en": {
+      "hero_greeting": "Hello, I'm",
+      "hero_role": "Software Developer & Financial Consultant",
+      "hero_bio": "Expert in Accounting, Finance, Fintech, and Project Management. Blending technical coding skills with deep financial expertise to optimize organizational performance.",
+      "btn_contact": "Contact Me",
+      "section_profile": "Professional Profile",
+      "profile_desc": "Accounting, Finance, Management, Banking and insurance Techniques, Fintech, Financial Analysis, project Manegment and fesabilty studies, with a solid academic background reinforced by recognized certifications and concrete experience across various projects. Expert in financial data analysis, project management, and the integration of digital solutions to optimize organizational performance.",
+      "section_ventures": "My company and its products",
+      "section_experience": "Professional Experience",
+      "section_skills": "Skills",
+      "section_education": "Education",
+      "section_certifications": "Certifications",
+      "section_interests": "Interests",
+      "section_contact": "Get In Touch",
+      "contact_loc": "AinTalh - Nouakchott North"
+    },
+    "fr": {
+      "hero_greeting": "Bonjour, je suis",
+      "hero_role": "Développeur Logiciel & Consultant Financier",
+      "hero_bio": "Expert en Comptabilité, Finance, Fintech et Gestion de Projet. Alliant compétences techniques en codage et expertise financière approfondie pour optimiser la performance organisationnelle.",
+      "btn_contact": "Contactez-moi",
+      "section_profile": "Profil Professionnel",
+      "profile_desc": "Comptabilité, Finance, Gestion, Techniques Bancaires et Assurance, Fintech, Analyse Financière, Gestion de Projet et études de faisabilité, avec un solide bagage académique renforcé par des certifications reconnues et une expérience concrète. Expert en analyse de données financières et intégration de solutions numériques.",
+      "section_ventures": "Mon entreprise et ses produits",
+      "section_experience": "Expérience Professionnelle",
+      "section_skills": "Compétences",
+      "section_education": "Éducation",
+      "section_certifications": "Certifications",
+      "section_interests": "Intérêts",
+      "section_contact": "Me Contacter",
+      "contact_loc": "AinTalh - Nouakchott Nord"
+    },
+    "ar": {
+      "hero_greeting": "السلام عليكم، أعرّفكم بنفسي:",
+      "hero_role": "مطور برمجيات ومستشار مالي",
+      "hero_bio": "خبير في المحاسبة والمالية والتكنولوجيا المالية وإدارة المشاريع. أجمع بين المهارات التقنية في البرمجة والخبرة المالية العميقة لتحسين الأداء المؤسسي.",
+      "btn_contact": "تواصل معي",
+      "section_profile": "الملف المهني",
+      "profile_desc": "المحاسبة، المالية، الإدارة، التقنيات المصرفية والتأمين، التكنولوجيا المالية، التحليل المالي، إدارة المشاريع ودراسات الجدوى، مع خلفية أكاديمية قوية معززة بشهادات معترف بها وخبرة عملية. خبير في تحليل البيانات المالية ودمج الحلول الرقمية.",
+      "section_ventures": "شركتي ومشاريعها",
+      "section_experience": "الخبرة المهنية",
+      "section_skills": "المهارات",
+      "section_education": "التعليم",
+      "section_certifications": "الشهادات",
+      "section_interests": "الاهتمامات",
+      "section_contact": "اتصل بي",
+      "contact_loc": "عين الطلح - نواكشوط الشمالية"
+    }
+  },
+  "ventures": [
+    {
+      "id": "venture_1",
+      "icon": "fas fa-building",
+      "title": {
+        "en": "The Accounting House",
+        "fr": "The Accounting House",
+        "ar": "دار المحاسبة"
+      },
+      "date": {
+        "en": "Jun 2025 - Present",
+        "fr": "Juin 2025 - Présent",
+        "ar": "يونيو 2025 - الحاضر"
+      },
+      "desc": {
+        "en": "Founder. A firm specialized in accounting, tax, financial monitoring, and advisory services.",
+        "fr": "Fondateur. Cabinet spécialisé en comptabilité, fiscalité, suivi financier et conseil.",
+        "ar": "المؤسس. شركة متخصصة في المحاسبة والضرائب والمراقبة المالية والخدمات الاستشارية."
+      }
+    },
+    {
+      "id": "venture_2",
+      "icon": "fas fa-laptop-code",
+      "title": {
+        "en": "Errayd - The Expere",
+        "fr": "Errayd - The Expere",
+        "ar": "الرايد"
+      },
+      "date": {
+        "en": "Product",
+        "fr": "Produit",
+        "ar": "منتج"
+      },
+      "desc": {
+        "en": "An affordable integrated management software for HR, accounting, inventory, and more, with tailored versions for businesses, banks, and insurance companies.",
+        "fr": "Logiciel de gestion intégré abordable pour RH, comptabilité, inventaire, etc., avec des versions adaptées pour les entreprises, les banques et les compagnies d'assurance.",
+        "ar": "برنامج إدارة متكامل بأسعار معقولة للموارد البشرية والمحاسبة والمخزون، مع إصدارات مخصصة للشركات والبنوك وشركات التأمين."
+      }
+    }
+  ],
+  "experience": [
+    {
+      "id": "exp_1",
+      "title": {
+        "en": "Regional Supervisor",
+        "fr": "Superviseur Régional",
+        "ar": "مشرف إقليمي"
+      },
+      "company": {
+        "en": "Ministry of Youth Empowerment & National Gendarmerie",
+        "fr": "Ministère de la Jeunesse & Gendarmerie Nationale",
+        "ar": "وزارة تمكين الشباب والرياضة والخدمة المدنيّة والعمل الطوعيّ"
+      },
+      "date": {
+        "en": "Oct 2025 - Dec 2025",
+        "fr": "Oct 2025 - Déc 2025",
+        "ar": "أكتوبر 2025 - ديسمبر 2025"
+      },
+      "desc": {
+        "en": "Youth & School Protection Program & Drug Prevention. Supervision of activities in collaboration with Anti-Narcotics Division.",
+        "fr": "Programme de protection de la jeunesse et prévention des drogues. Supervision des activités en collaboration avec la Division Anti-Stupéfiants.",
+        "ar": "برنامج حماية الشباب والوقاية من المخدرات. الإشراف على الأنشطة بالتعاون مع إدارة مكافحة المخدرات."
+      }
+    },
+    {
+      "id": "exp_2",
+      "title": {
+        "en": "Partnerships & Collaboration Supervisor",
+        "fr": "Superviseur des Partenariats",
+        "ar": "مشرف الشراكات"
+      },
+      "company": {
+        "en": "Noujoum Mauritania Sarl",
+        "fr": "Noujoum Mauritania Sarl",
+        "ar": "نجوم موريتانيا ش.م.م"
+      },
+      "date": {
+        "en": "Jun 2025 - Sep 2025",
+        "fr": "Juin 2025 - Sep 2025",
+        "ar": "يونيو 2025 - سبتمبر 2025"
+      },
+      "desc": {
+        "en": "Supervision of inter-company partnerships and projects.",
+        "fr": "Supervision des partenariats inter-entreprises et des projets.",
+        "ar": "الإشراف على الشراكات والمشاريع بين الشركات."
+      }
+    },
+    {
+      "id": "exp_3",
+      "title": {
+        "en": "Intern - Banking Supervision",
+        "fr": "Stagiaire - Supervision Bancaire",
+        "ar": "متدرب - الرقابة المصرفية"
+      },
+      "company": {
+        "en": "Central Bank of Mauritania",
+        "fr": "Banque Centrale de Mauritanie",
+        "ar": "البنك المركزي الموريتاني"
+      },
+      "date": {
+        "en": "Jul 2024 - Sep 2024",
+        "fr": "Juil 2024 - Sep 2024",
+        "ar": "يوليو 2024 - سبتمبر 2024"
+      },
+      "desc": {
+        "en": "Collection and monitoring of information, data analysis, and recommendations for financial stability.",
+        "fr": "Collecte et suivi des informations, analyse des données et recommandations pour la stabilité financière.",
+        "ar": "جمع ومراقبة المعلومات وتحليل البيانات وتقديم التوصيات للاستقرار المالي."
+      }
+    },
+    {
+      "id": "exp_4",
+      "title": {
+        "en": "Board Member",
+        "fr": "Membre du Conseil",
+        "ar": "عضو مجلس الإدارة"
+      },
+      "company": {
+        "en": "ISCAE",
+        "fr": "ISCAE",
+        "ar": "المعهد العالي للمحاسبة (ISCAE)"
+      },
+      "date": {
+        "en": "Apr 2024 - May 2025",
+        "fr": "Avr 2024 - Mai 2025",
+        "ar": "أبريل 2024 - مايو 2025"
+      },
+      "desc": {
+        "en": "Elected member representing students on the Board of Directors. Participation in decision-making and budget review.",
+        "fr": "Membre élu représentant les étudiants au Conseil d'Administration. Participation aux décisions et examen du budget.",
+        "ar": "عضو منتخب ممثل للطلاب في مجلس الإدارة. المشاركة في صنع القرار ومراجعة الميزانية."
+      }
+    }
+  ],
+  "skills": [
+    "Accounting Techniques",
+    "Financial Analysis",
+    "Fintech",
+    "Project Management",
+    "Banking Softwares",
+    "Risk Management",
+    "Sage 100",
+    "HTML / CSS",
+    "PHP / SQL",
+    "Communication",
+    "Critical Thinking"
+  ],
+  "education": [
+    {
+      "id": "edu_1",
+      "degree": {
+        "en": "Professional Bachelor's in Management Sciences",
+        "fr": "Licence Professionnelle en Sciences de Gestion",
+        "ar": "ليسانس مهني في علوم التسيير"
+      },
+      "school": {
+        "en": "Higher Institute of Accounting and Business Administration (ISCAE)",
+        "fr": "ISCAE",
+        "ar": "ISCAE"
+      },
+      "desc": {
+        "en": "Department of Management, Economics and Law, specializing in Banking and Insurance.",
+        "fr": "Département de Gestion, Économie et Droit, spécialité Banque et Assurance.",
+        "ar": "تخصص بنوك وتأمين."
+      }
+    },
+    {
+      "id": "edu_2",
+      "degree": {
+        "en": "Highschool Degree in Mathematics",
+        "fr": "Baccalauréat Mathématiques",
+        "ar": "بكالوريا رياضيات"
+      },
+      "school": {
+        "en": "Lycée d'Excellence 1 - Nouakchott",
+        "fr": "Lycée d'Excellence 1",
+        "ar": "ثانوية الامتياز 1"
+      },
+      "desc": {
+        "en": "A selective national high school for top-performing students in mathematics and sciences.",
+        "fr": "Formation des meilleurs élèves en mathématiques et sciences.",
+        "ar": "مؤسسة وطنية لتدريب المتفوقين."
+      }
+    }
+  ],
+  "certifications": [
+    {
+      "id": "cert_1",
+      "icon": "fas fa-language",
+      "name": {
+        "en": "EF SET English (C2/B2)",
+        "fr": "EF SET English (C2/B2)",
+        "ar": "شهادة اللغة الإنجليزية EF SET"
+      }
+    },
+    {
+      "id": "cert_2",
+      "icon": "fas fa-chart-line",
+      "name": {
+        "en": "Data Analysis (Open University)",
+        "fr": "Data Analysis (Open University)",
+        "ar": "تحليل البيانات (Open University)"
+      }
+    },
+    {
+      "id": "cert_3",
+      "icon": "fas fa-piggy-bank",
+      "name": {
+        "en": "Save and Invest (Grenoble)",
+        "fr": "Save and Invest (Grenoble)",
+        "ar": "الادخار والاستثمار"
+      }
+    },
+    {
+      "id": "cert_4",
+      "icon": "fas fa-rocket",
+      "name": {
+        "en": "Business Growth (Semrush)",
+        "fr": "Business Growth (Semrush)",
+        "ar": "نمو الأعمال (Semrush)"
+      }
+    },
+    {
+      "id": "cert_5",
+      "icon": "fas fa-cogs",
+      "name": {
+        "en": "Strategic Management",
+        "fr": "Strategic Management",
+        "ar": "إدارة العمليات"
+      }
+    },
+    {
+      "id": "cert_6",
+      "icon": "fas fa-university",
+      "name": {
+        "en": "Liquidity Management",
+        "fr": "Liquidity Management",
+        "ar": "إدارة السيولة"
+      }
+    }
+  ],
+  "interests": [
+    {
+      "id": "interest_1",
+      "title": {
+        "en": "Sports",
+        "fr": "Sports",
+        "ar": "الرياضة"
+      },
+      "desc": {
+        "en": "Founding member of the Al-Badaa club in Boutillimite.",
+        "fr": "Membre fondateur du club Al-Badaa.",
+        "ar": "عضو مؤسس لنادي البداع في بوتيلميت."
+      }
+    },
+    {
+      "id": "interest_2",
+      "title": {
+        "en": "Continuous Learning",
+        "fr": "Apprentissage Continu",
+        "ar": "التعلم المستمر"
+      },
+      "desc": {
+        "en": "I like to learn new things to develop my skills and improve my levels.",
+        "fr": "Développer mes compétences et m'améliorer.",
+        "ar": "أحب تعلم أشياء جديدة لتطوير مهاراتي."
+      }
+    }
+  ],
+  "contact": {
+    "email": "mts.mouhamedtaha@gmail.com",
+    "whatsapp": "+22244508860",
+    "phone": "+222 44.50.88.60",
+    "location": {
+      "en": "AinTalh - Nouakchott North",
+      "fr": "AinTalh - Nouakchott Nord",
+      "ar": "عين الطلح - نواكشوط الشمالية"
+    }
+  },
+  "activities": [
+    {
+      "id": "act_1",
+      "title": {
+        "en": "Launch of The Accounting House",
+        "fr": "Lancement de The Accounting House",
+        "ar": "إطلاق دار المحاسبة"
+      },
+      "date": "2025-06-01",
+      "category": {
+        "en": "Entrepreneurship",
+        "fr": "Entrepreneuriat",
+        "ar": "ريادة الأعمال"
+      },
+      "desc": {
+        "en": "Successfully founded and launched The Accounting House, providing top-tier accounting, tax planning, and corporate finance advisory services to small and medium enterprises.",
+        "fr": "Fondation et lancement avec succès de The Accounting House, fournissant des services haut de gamme de comptabilité, de planification fiscale et de conseil en finance d'entreprise aux PME.",
+        "ar": "تأسيس وإطلاق دار المحاسبة بنجاح، وتقديم خدمات محاسبية متميزة وتخطيط ضريبي واستشارات مالية للمؤسسات الصغيرة والمتوسطة."
+      },
+      "images": [],
+      "links": [
+        {
+          "label": {
+            "en": "Official Site",
+            "fr": "Site Officiel",
+            "ar": "الموقع الرسمي"
+          },
+          "url": "https://theaccountinghouse.com"
+        }
+      ]
+    }
+  ]
+}

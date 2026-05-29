@@ -1,0 +1,919 @@
+/* ==========================================================================
+   IPHONE ECOSYSTEM CONTAINER STYLES
+   ========================================================================== */
+
+/* Page layout to center device */
+body.phone-mode-active {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #020617;
+    font-family: 'Outfit', sans-serif;
+    perspective: 1000px;
+}
+
+/* Ambient canvas background */
+.phone-ambient-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+    pointer-events: none;
+    filter: blur(8px);
+    opacity: 0.6;
+}
+
+/* Base Device Frame (Desktop Only) */
+.phone-device {
+    position: relative;
+    width: 390px;
+    height: 844px;
+    background: #0f172a;
+    border: 12px solid #2a2f3e;
+    border-radius: 48px;
+    box-shadow: 
+        0 25px 60px -15px rgba(0, 0, 0, 0.8),
+        0 0 0 2px rgba(255, 255, 255, 0.05),
+        inset 0 0 10px rgba(0, 0, 0, 0.6);
+    z-index: 10;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    user-select: none;
+    transition: transform 0.1s ease-out;
+    transform-style: preserve-3d;
+}
+
+/* Screen Wrapper */
+.phone-screen {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: #090d16;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Canvas wallpaper */
+.phone-wallpaper-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* Casing Buttons */
+.phone-button {
+    position: absolute;
+    background: #1e293b;
+    border-radius: 3px;
+    z-index: 5;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    cursor: pointer;
+    transition: transform 0.1s ease;
+}
+.phone-button:active {
+    transform: scaleX(0.9);
+}
+
+.volume-up {
+    width: 3px;
+    height: 50px;
+    left: -15px;
+    top: 180px;
+}
+
+.volume-down {
+    width: 3px;
+    height: 50px;
+    left: -15px;
+    top: 240px;
+}
+
+.power-btn {
+    width: 3px;
+    height: 75px;
+    right: -15px;
+    top: 210px;
+}
+
+/* Status Bar & Dynamic Island */
+.phone-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    z-index: 200;
+    pointer-events: none;
+}
+
+.status-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 24px;
+    height: 100%;
+    color: white;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: -0.2px;
+}
+
+.status-time {
+    width: 60px;
+    text-align: center;
+}
+
+.status-icons {
+    width: 60px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 6px;
+    align-items: center;
+    font-size: 0.75rem;
+}
+
+.dynamic-island {
+    width: 110px;
+    height: 30px;
+    background: #000;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 12px;
+    box-shadow: inset 0 0 4px rgba(255,255,255,0.1);
+    pointer-events: auto;
+    transition: width 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), height 0.3s;
+}
+
+.dynamic-island-camera {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #0c1c38 20%, #030814 80%);
+    box-shadow: inset 0 1px 2px rgba(255,255,255,0.2);
+    margin-left: auto; /* Push right to mimic camera position */
+}
+
+/* Home Indicator Bar */
+.home-indicator-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 210;
+    cursor: pointer;
+}
+
+.indicator-line {
+    width: 130px;
+    height: 5px;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 10px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.home-indicator-bar:hover .indicator-line {
+    background-color: rgba(255, 255, 255, 1);
+    transform: scaleY(1.2);
+}
+
+/* Viewport for Launcher & Apps */
+.phone-content {
+    position: relative;
+    flex-grow: 1;
+    width: 100%;
+    height: 100%;
+    padding: 50px 0 25px 0; /* Clear header and footer indicator */
+    z-index: 10;
+}
+
+/* ==========================================================================
+   HOMESCREEN INTERFACE
+   ========================================================================== */
+.homescreen {
+    width: 100%;
+    height: 100%;
+    padding: 15px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 20px;
+    overflow-y: auto;
+    scrollbar-width: none;
+}
+.homescreen::-webkit-scrollbar {
+    display: none;
+}
+
+/* Profile Card Widget */
+.profile-widget {
+    background: rgba(15, 23, 42, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border-radius: 24px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4);
+}
+
+.widget-avatar {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid var(--primary);
+    flex-shrink: 0;
+    box-shadow: 0 0 15px rgba(102, 126, 234, 0.3);
+}
+
+.widget-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.widget-info {
+    flex-grow: 1;
+}
+
+.widget-name {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 2px;
+}
+
+.widget-role {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    line-height: 1.3;
+}
+
+/* Mini contact widget */
+.contacts-widget {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.contact-pill {
+    background: rgba(15, 23, 42, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(15px);
+    border-radius: 18px;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    font-size: 0.78rem;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.contact-pill i {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--gradient-2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+}
+
+.contact-pill:hover {
+    border-color: var(--primary);
+    background: rgba(15, 23, 42, 0.6);
+    transform: translateY(-2px);
+}
+
+/* Switch widgets */
+.switcher-widget {
+    background: rgba(15, 23, 42, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    padding: 12px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.switcher-widget span {
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--text-muted);
+}
+
+.switcher-widget .lang-buttons-row {
+    display: flex;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 14px;
+    padding: 2px;
+}
+
+.switcher-widget .lang-btn {
+    background: none;
+    border: none;
+    padding: 6px 12px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    border-radius: 11px;
+    cursor: pointer;
+    color: var(--text-muted);
+    transition: 0.3s;
+}
+
+.switcher-widget .lang-btn.active {
+    background: var(--primary);
+    color: white;
+    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.4);
+}
+
+/* App Grid Launcher */
+.app-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.app-icon-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.app-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    color: white;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.app-icon::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, transparent 60%);
+    pointer-events: none;
+}
+
+.app-icon-wrapper:hover .app-icon {
+    transform: scale(1.08) translateY(-3px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.5), 0 0 10px var(--primary);
+}
+
+.app-icon-wrapper:active .app-icon {
+    transform: scale(0.95);
+}
+
+.app-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: white;
+    text-align: center;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+}
+
+/* Icon Gradients */
+.icon-about { background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); }
+.icon-projects { background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); }
+.icon-activities { background: linear-gradient(135deg, #10b981 0%, #047857 100%); }
+.icon-admin { background: linear-gradient(135deg, #6366f1 0%, #4338ca 100%); }
+
+/* ==========================================================================
+   APP PORTS / VIEWPORTS
+   ========================================================================== */
+.app-viewport {
+    position: absolute;
+    top: 50px; /* Under status bar */
+    left: 0;
+    width: 100%;
+    height: calc(100% - 75px); /* Clear header + home indicator */
+    z-index: 100;
+    background-color: #090d16;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    overflow-y: auto;
+    scrollbar-width: none;
+    display: none;
+    opacity: 0;
+    transform: scale(0.05);
+    transform-origin: center;
+}
+.app-viewport::-webkit-scrollbar {
+    display: none;
+}
+
+/* launch transitions */
+.app-viewport.active {
+    display: block;
+    animation: app-launch 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.app-viewport.closing {
+    display: block;
+    animation: app-exit 0.35s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+}
+
+@keyframes app-launch {
+    from {
+        opacity: 0;
+        transform: scale(0.05);
+        border-radius: 100px;
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+        border-radius: 0px;
+    }
+}
+
+@keyframes app-exit {
+    from {
+        opacity: 1;
+        transform: scale(1);
+        border-radius: 0px;
+    }
+    to {
+        opacity: 0;
+        transform: scale(0.05);
+        border-radius: 100px;
+    }
+}
+
+/* Shared App Container Inner Layout */
+.app-container-inner {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+    min-height: 100%;
+}
+
+.app-header-title {
+    font-size: 1.4rem;
+    font-weight: 800;
+    margin-bottom: 5px;
+    background: var(--gradient-1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.app-header-subtitle {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    border-bottom: 1px solid var(--card-border);
+    padding-bottom: 12px;
+}
+
+/* ==========================================================================
+   APP VIEWS SPECIFIC
+   ========================================================================== */
+
+/* 1. ABOUT APP */
+.about-blob-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0.15;
+}
+
+.about-scrollable {
+    position: relative;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* 2. PROJECTS APP */
+.ventures-scrollable {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* 3. ACTIVITIES APP */
+.activities-timeline-wrapper {
+    margin-top: 15px;
+    position: relative;
+    padding-left: 20px;
+}
+
+.activities-timeline-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    bottom: 5px;
+    left: 4px;
+    width: 2px;
+    background: var(--primary);
+}
+
+.activity-card-wrapper {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.activity-node {
+    position: absolute;
+    left: -20px;
+    top: 16px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 6px var(--accent);
+    transform: translateX(-50%);
+}
+
+.activity-card {
+    padding: 15px !important;
+}
+
+.activity-title {
+    font-size: 1.15rem !important;
+    font-weight: 700;
+}
+
+.activity-desc {
+    font-size: 0.82rem !important;
+    color: var(--text-muted);
+}
+
+/* ==========================================================================
+   IPHONE LOCK / PASSCODE SCREEN
+   ========================================================================== */
+.passcode-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(9, 13, 22, 0.95);
+    backdrop-filter: blur(25px);
+    z-index: 300;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    transform: translateY(100%);
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.passcode-screen.active {
+    transform: translateY(0);
+}
+
+.passcode-lock-icon {
+    font-size: 2.2rem;
+    color: white;
+    margin-bottom: 12px;
+    animation: lock-bob 2.5s infinite ease-in-out;
+}
+@keyframes lock-bob {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+.passcode-prompt {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 25px;
+}
+
+/* Circle progress dots */
+.passcode-dots {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.passcode-dot {
+    width: 12px;
+    height: 12px;
+    border: 1.5px solid white;
+    border-radius: 50%;
+    transition: background-color 0.2s;
+}
+
+.passcode-dot.filled {
+    background-color: white;
+}
+
+/* 3x4 keyboard layout */
+.passcode-keypad {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px 24px;
+    max-width: 260px;
+}
+
+.keypad-btn {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    color: white;
+    font-size: 1.45rem;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.25s, transform 0.1s;
+}
+
+.keypad-btn:active {
+    background: rgba(255, 255, 255, 0.25);
+    transform: scale(0.92);
+}
+
+.keypad-btn.action-btn {
+    background: transparent;
+    border: none;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-muted);
+}
+.keypad-btn.action-btn:hover {
+    color: white;
+}
+
+.keypad-subtitle {
+    font-size: 0.58rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: rgba(255, 255, 255, 0.5);
+    margin-top: -2px;
+}
+
+/* Shake Animation on Wrong passcode */
+.passcode-dots.shake {
+    animation: shake-dots 0.4s ease;
+}
+@keyframes shake-dots {
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-8px); }
+    40%, 80% { transform: translateX(8px); }
+}
+
+/* ==========================================================================
+   RESPONSIVENESS AND DEVICE CONVERSION
+   ========================================================================== */
+
+/* Mobile view - expand device frame borders out of screen */
+@media (max-width: 768px) {
+    body.phone-mode-active {
+        background-color: #090d16;
+    }
+
+    .phone-ambient-bg {
+        display: none;
+    }
+
+    .phone-device {
+        width: 100vw;
+        height: 100vh;
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+        margin: 0;
+    }
+
+    .phone-button {
+        display: none; /* Hide hardware buttons on true mobile */
+    }
+
+    .app-viewport {
+        border-radius: 0; /* Keep fullscreen straight corners */
+    }
+
+    .dynamic-island {
+        /* Scale dynamic island down or match iOS sizes */
+        width: 90px;
+        height: 25px;
+    }
+}
+
+/* ==========================================================================
+   GLOBAL LIGHTBOX MODAL STYLES
+   ========================================================================== */
+.lightbox {
+    display: flex;
+    position: fixed;
+    z-index: 99999;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(9, 13, 22, 0.96);
+    backdrop-filter: blur(12px);
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.lightbox.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.lightbox-content {
+    max-width: 85%;
+    max-height: 75%;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+    transform: scale(0.95);
+    transition: transform 0.3s ease;
+    object-fit: contain;
+}
+
+.lightbox.active .lightbox-content {
+    transform: scale(1);
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    color: white;
+    font-size: 38px;
+    font-weight: 300;
+    cursor: pointer;
+    transition: color 0.2s;
+    z-index: 100002;
+}
+
+.lightbox-close:hover {
+    color: var(--primary);
+}
+
+.lightbox-prev,
+.lightbox-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(30, 41, 59, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 100001;
+}
+
+.lightbox-prev:hover,
+.lightbox-next:hover {
+    background: var(--primary);
+    border-color: var(--primary);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.lightbox-prev {
+    left: 40px;
+}
+
+.lightbox-next {
+    right: 40px;
+}
+
+.lightbox-caption {
+    margin-top: 20px;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    text-align: center;
+    max-width: 80%;
+}
+
+@media (max-width: 768px) {
+    .lightbox-prev { left: 15px; }
+    .lightbox-next { right: 15px; }
+    .lightbox-close { top: 20px; right: 25px; }
+}
+
+/* ==========================================================================
+   ENHANCED 3D EFFECTS & SPECULAR REFLECTIONS
+   ========================================================================== */
+
+.phone-reflection {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(125deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 30%, transparent 31%, transparent 100%);
+    z-index: 150;
+    pointer-events: none;
+    transition: background 0.15s ease-out;
+}
+
+/* Metallic Sheen on the Device Case */
+.phone-device {
+    background: #0f172a;
+    border: 12px solid #202430 !important;
+    box-shadow: 
+        0 25px 65px -15px rgba(0, 0, 0, 0.9),
+        0 0 0 2px rgba(255, 255, 255, 0.04),
+        inset 0 0 15px rgba(0, 0, 0, 0.8) !important;
+}
+
+/* Enhanced 3D Hardware Buttons */
+.phone-button {
+    background: linear-gradient(to right, #4b5563, #1f2937) !important;
+    border: 1px solid rgba(255, 255, 255, 0.18) !important;
+    box-shadow: -2px 3px 5px rgba(0,0,0,0.6) !important;
+    transition: transform 0.1s ease, box-shadow 0.1s;
+}
+
+.volume-up, .volume-down {
+    width: 6px !important;
+    left: -17px !important;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+.power-btn {
+    width: 6px !important;
+    right: -17px !important;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    box-shadow: 2px 3px 5px rgba(0,0,0,0.6) !important;
+}
+
+.volume-up:active, .volume-down:active {
+    transform: translateX(3px) scale(0.95);
+    box-shadow: -1px 1px 2px rgba(0,0,0,0.3) !important;
+}
+
+.power-btn:active {
+    transform: translateX(-3px) scale(0.95);
+    box-shadow: 1px 1px 2px rgba(0,0,0,0.3) !important;
+}
+
+/* Glowing Dynamic Island camera lens */
+.dynamic-island-camera {
+    background: radial-gradient(circle, #1e3a8a 15%, #020617 80%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 4px rgba(30, 64, 175, 0.5);
+}

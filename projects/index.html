@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects & Ventures | Mohamed Taha EBOU</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../assets/profile%20image/en%20-%20fr%20profile.png">
+    
+    <!-- CSS Stylesheets (Relative Paths) -->
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../phone.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Outfit:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        // Set active app context: opens the 'projects' app instantly on load
+        window.activeApp = 'projects';
+    </script>
+</head>
+
+<body class="phone-mode-active">
+
+    <!-- Global Image Lightbox Modal -->
+    <div id="lightbox-modal" class="lightbox">
+        <span class="lightbox-close" onclick="document.getElementById('lightbox-modal').classList.remove('active')">&times;</span>
+        <button class="lightbox-prev" onclick="lightboxIndex = (lightboxIndex - 1 + lightboxImages.length) % lightboxImages.length; updateSharedLightbox();"><i class="fas fa-chevron-left"></i></button>
+        <img class="lightbox-content" id="lightbox-img" src="" alt="Gallery Image">
+        <button class="lightbox-next" onclick="lightboxIndex = (lightboxIndex + 1) % lightboxImages.length; updateSharedLightbox();"><i class="fas fa-chevron-right"></i></button>
+        <div id="lightbox-caption" class="lightbox-caption"></div>
+    </div>
+
+    <!-- Core Phone Framework Script -->
+    <script src="../phone.js?v=2"></script>
+</body>
+
+</html>

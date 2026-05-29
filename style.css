@@ -1,0 +1,703 @@
+/* =========================================
+   1. VARIABLES & THEMES
+   ========================================= */
+:root {
+    --primary-hue: 220;
+    --primary: hsl(var(--primary-hue), 100%, 60%);
+    --primary-dark: hsl(var(--primary-hue), 85%, 48%);
+    --accent: hsl(195, 100%, 45%);
+
+    /* Dark Theme (Default) */
+    --bg-color: #0f172a;
+    --text-color: #f8fafc;
+    --text-muted: #94a3b8;
+    --card-bg: rgba(30, 41, 59, 0.7);
+    --card-border: rgba(255, 255, 255, 0.1);
+    --nav-bg: rgba(15, 23, 42, 0.85);
+    --shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+
+    --gradient-1: linear-gradient(135deg, #2563eb 0%, #1e3a8a 100%);
+    --gradient-2: linear-gradient(to right, #3b82f6 0%, #06b6d4 100%);
+
+    --font-main: 'Times New Roman', serif;
+    --font-arabic: 'Amiri', serif;
+}
+
+[data-theme="light"] {
+    --bg-color: #f0f4f8;
+    --text-color: #1e293b;
+    --text-muted: #64748b;
+    --card-bg: rgba(255, 255, 255, 0.8);
+    --card-border: rgba(0, 0, 0, 0.05);
+    --nav-bg: rgba(255, 255, 255, 0.9);
+    --shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
+}
+
+/* =========================================
+   2. GLOBAL STYLES
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    overflow-x: hidden;
+    max-width: 100vw;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    width: 100%;
+    position: relative;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+[lang="ar"],
+[dir="rtl"] {
+    font-family: var(--font-arabic);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: 0.3s;
+}
+
+ul {
+    list-style: none;
+}
+
+/* =========================================
+   3. BACKGROUND ANIMATION
+   ========================================= */
+.bg-shape {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(100px);
+    z-index: -1;
+    opacity: 0.5;
+    animation: float 20s infinite ease-in-out;
+}
+
+.shape-1 {
+    width: 400px;
+    height: 400px;
+    background: var(--primary);
+    top: -100px;
+    left: -100px;
+    animation-delay: 0s;
+}
+
+.shape-2 {
+    width: 300px;
+    height: 300px;
+    background: var(--accent);
+    bottom: -50px;
+    right: -50px;
+    animation-delay: -10s;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(30px, 50px);
+    }
+}
+
+.bg-grid {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+        linear-gradient(var(--card-border) 1px, transparent 1px),
+        linear-gradient(90deg, var(--card-border) 1px, transparent 1px);
+    background-size: 50px 50px;
+    z-index: -2;
+    opacity: 0.1;
+    mask-image: radial-gradient(circle at center, black, transparent 80%);
+}
+
+/* =========================================
+   4. LAYOUT UTILITIES
+   ========================================= */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section {
+    padding: 80px 0;
+}
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.section-header {
+    margin-bottom: 50px;
+    position: relative;
+    display: inline-block;
+}
+
+.section-header h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    background: var(--gradient-1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.section-header .line {
+    width: 50px;
+    height: 4px;
+    background: var(--primary);
+    border-radius: 2px;
+}
+
+/* =========================================
+   5. NAVIGATION
+   ========================================= */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: var(--nav-bg);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    border-bottom: 1px solid var(--card-border);
+    padding: 15px 0;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    background: var(--gradient-2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nav-controls {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.icon-btn:hover {
+    color: var(--primary);
+}
+
+.lang-switcher {
+    display: flex;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 20px;
+    padding: 2px;
+}
+
+.lang-btn {
+    background: none;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 15px;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.close-menu {
+    display: none;
+    /* Hidden on desktop */
+}
+
+.lang-btn.active {
+    background: var(--primary);
+    color: white;
+}
+
+/* Mobile Nav Drawer */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+        position: relative;
+        z-index: 2000;
+        /* Ensure above everything */
+        width: 30px;
+        height: 25px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        margin-left: 20px;
+        /* Spacing in RTL might need this */
+    }
+
+    [dir="rtl"] .hamburger {
+        margin-left: 0;
+        margin-right: 20px;
+    }
+
+    .hamburger .bar {
+        display: block;
+        width: 100%;
+        height: 3px;
+        background-color: var(--text-color);
+        margin: 5px 0;
+        border-radius: 2px;
+        transition: 0.3s;
+    }
+
+    .hamburger.active {
+        display: none;
+        /* Hide hamburger when menu is open */
+    }
+
+    .close-menu {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: none;
+        border: none;
+        color: var(--text-color);
+        font-size: 2rem;
+        cursor: pointer;
+        cursor: pointer;
+        display: block;
+        z-index: 2001;
+        /* Above menu */
+    }
+
+    [dir="rtl"] .close-menu {
+        right: auto;
+        left: 20px;
+    }
+
+    .nav-menu {
+        position: fixed;
+        z-index: 1500;
+        /* Above navbar */
+        /* Default LTR position hidden */
+        top: 0;
+        left: -100%;
+        /* Fully off-screen left */
+        right: auto;
+
+        width: 100%;
+        height: 100vh;
+        flex-direction: column;
+        background-color: var(--nav-bg);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        text-align: center;
+        /* Use left/right transition */
+        transition: left 0.4s ease, right 0.4s ease, visibility 0.4s;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+        justify-content: center;
+        border-radius: 0;
+        padding-top: 80px;
+        visibility: hidden;
+        /* Hide when closed */
+    }
+
+    /* RTL Initial State */
+    [dir="rtl"] .nav-menu {
+        left: auto;
+        right: -100%;
+        /* Fully off-screen right */
+        transform: none;
+        /* remove legacy transform */
+    }
+
+    /* Active State LTR */
+    .nav-menu.active {
+        left: 0;
+        visibility: visible;
+        transform: none;
+    }
+
+    /* Active State RTL */
+    [dir="rtl"] .nav-menu.active {
+        left: auto;
+        right: 0;
+        visibility: visible;
+        transform: none;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .nav-link {
+        font-size: 1.5rem;
+    }
+
+    .nav-controls {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+}
+
+/* =========================================
+   6. COMPONENTS (Cards, Buttons)
+   ========================================= */
+.glass-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    backdrop-filter: blur(12px);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: var(--shadow);
+    transition: transform 0.1s ease-out;
+    /* Smooth tilt reset */
+    position: relative;
+    overflow: hidden;
+}
+
+.tilt-card {
+    transform-style: preserve-3d;
+}
+
+.card-glow {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    top: -100px;
+    left: -100px;
+    transition: transform 0.1s;
+    mix-blend-mode: overlay;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-right: 15px;
+    margin-bottom: 15px;
+}
+
+.btn-primary {
+    background: var(--gradient-1);
+    color: white;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+}
+
+.btn-outline {
+    border: 2px solid var(--primary);
+    color: var(--primary);
+}
+
+.btn-outline:hover {
+    background: var(--primary);
+    color: white;
+}
+
+/* =========================================
+   7. HERO SECTION
+   ========================================= */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: 80px;
+}
+
+.hero-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.hero-content {
+    z-index: 10;
+}
+
+.greeting {
+    font-size: 1.5rem;
+    color: var(--primary);
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.name {
+    font-size: 4rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    background: linear-gradient(to right, #fff, #94a3b8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+[data-theme="light"] .name {
+    background: linear-gradient(to right, #1e293b, #475569);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.role {
+    font-size: 1.25rem;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+}
+
+.bio-short {
+    margin-bottom: 30px;
+    max-width: 500px;
+}
+
+.hero-image-wrapper {
+    display: flex;
+    justify-content: center;
+    perspective: 1000px;
+}
+
+.hero-card {
+    position: relative;
+    width: 350px;
+    height: 350px;
+    border-radius: 30px;
+    padding: 10px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 400px) {
+    .container {
+        padding: 0 15px;
+        /* Reduce padding to give more space for content */
+    }
+
+    .hero-card,
+    .glass-card {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+.profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    transform: translateZ(30px);
+    /* 3D pop */
+}
+
+
+/* =========================================
+   8. SECTIONS SPECIFIC
+   ========================================= */
+/* Experience Timeline */
+.timeline {
+    position: relative;
+    border-left: 2px solid var(--primary);
+    margin-left: 20px;
+    padding-left: 40px;
+}
+
+[dir="rtl"] .timeline {
+    border-left: none;
+    border-right: 2px solid var(--primary);
+    margin-left: 0;
+    margin-right: 20px;
+    padding-left: 0;
+    padding-right: 40px;
+}
+
+.timeline-item {
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.timeline-dot {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: var(--accent);
+    border-radius: 50%;
+    left: -49px;
+    top: 20px;
+    border: 4px solid var(--bg-color);
+}
+
+[dir="rtl"] .timeline-dot {
+    left: auto;
+    right: -49px;
+}
+
+.timeline-item h3 {
+    color: var(--text-color);
+    margin-bottom: 5px;
+}
+
+.timeline-item h4 {
+    color: var(--primary);
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+
+.timeline-item .date {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+    font-style: italic;
+}
+
+/* Skills Tags */
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.skill-tag {
+    padding: 10px 20px;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 50px;
+    font-size: 0.95rem;
+    transition: 0.3s;
+}
+
+.skill-tag:hover {
+    background: var(--primary);
+    color: white;
+    transform: translateY(-5px);
+}
+
+/* Certifications */
+.cert-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.small-card {
+    text-align: center;
+    padding: 20px;
+}
+
+.cert-icon {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: var(--accent);
+}
+
+/* Contact */
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.contact-card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+.contact-card i {
+    font-size: 1.5rem;
+    color: var(--primary);
+}
+
+.contact-card:hover {
+    border-color: var(--primary);
+}
+
+/* =========================================
+   9. RESPONSIVE
+   ========================================= */
+@media (max-width: 768px) {
+    .hero-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .hero-content {
+        order: 2;
+    }
+
+    .hero-image-wrapper {
+        order: 1;
+        margin-bottom: 40px;
+    }
+
+    .name {
+        font-size: 2.5rem;
+    }
+
+    .timeline {
+        margin-left: 10px;
+        padding-left: 20px;
+        margin-right: 0;
+        /* Reset */
+        padding-right: 0;
+        /* Reset */
+    }
+
+    [dir="rtl"] .timeline {
+        border-left: none;
+        border-right: 2px solid var(--primary);
+        margin-left: 0;
+        margin-right: 10px;
+        padding-left: 0;
+        padding-right: 20px;
+    }
+
+    /* Fix Dot Position for Mobile if needed, usually inherit is fine but let's be safe */
+    [dir="rtl"] .timeline-dot {
+        left: auto;
+        right: -29px;
+        /* Adjusted for smaller mobile padding */
+    }
+}

@@ -1,0 +1,99 @@
+# مُحَمَّد طَـٰٓه۪ 𓂆 أُبُّ (Mohamed Taha EBOU)
+Official AI-Readable Resume and Professional Profile.
+Last Updated: May 2026
+
+## Contact Information
+- **Full Name:** Mohamed Taha EBOU (مُحَمَّد طَـٰٓه۪ 𓂆 أُبُّ)
+- **Role:** Software Developer & Corporate Financial Consultant
+- **Email:** mts.mouhamedtaha@gmail.com
+- **Phone / WhatsApp:** +22244508860
+- **Location:** AinTalh, Nouakchott North, Mauritania
+- **Website:** https://medtahaebbou.github.io/Portfelio/
+
+---
+
+## Professional Summary
+Expert blending Corporate Finance, Accounting, Fintech, and Software Engineering. Focused on financial data analysis, project management, feasibility studies, and integrating custom software systems to optimize organizational workflows.
+
+---
+
+## Startup Ventures & Products
+
+### 1. The Accounting House (دار المحاسبة)
+- **Role:** Founder (June 2025 - Present)
+- **Type:** Advisory & Accounting firm
+- **Services:** Accounting, corporate taxation mapping, financial audits, advisory, and compliance.
+
+### 2. Errayd (الرايد)
+- **Type:** ERP Integrated Management Software Product
+- **Target Audience:** Small & Medium Businesses, Banks, Insurance companies.
+- **Capabilities:** Manages Human Resources, payroll cycles, double-entry accounting ledger flows, assets, stock inventories, and specialized transaction tracking.
+
+---
+
+## Work Experience
+
+### 1. Regional Supervisor
+- **Employer:** Ministry of Youth Empowerment & National Gendarmerie
+- **Duration:** Oct 2025 - Dec 2025
+- **Description:** Supervised youth activities, student protection program coordination, and drug abuse prevention schemes in collaboration with the National Anti-Narcotics Division.
+
+### 2. Partnerships & Collaboration Supervisor
+- **Employer:** Noujoum Mauritania Sarl
+- **Duration:** June 2025 - Sept 2025
+- **Description:** Managed inter-company sports and institutional partnerships, oversaw sports-tech logistics and project setups.
+
+### 3. Banking Supervision Division Intern
+- **Employer:** Central Bank of Mauritania (BCM)
+- **Duration:** July 2024 - Sept 2024
+- **Description:** Assessed stability indexes, logged reporting data from local banks, and compiled risk management recommendations for supervisory boards.
+
+### 4. Board Member (Student Representative)
+- **Institution:** Higher Institute of Accounting and Business Administration (ISCAE)
+- **Duration:** April 2024 - May 2025
+- **Description:** Student representative on the Board of Directors, participated in budget reviews, program upgrades, and administrative audits.
+
+---
+
+## Core Skills
+
+### Finance & Management
+- Financial Statement Auditing & Analysis
+- Corporate Taxation & Tax Planning
+- Risk Management
+- Project Management & Feasibility Studies
+- Liquidity Management
+
+### Technical Stack & Software
+- Sage 100 ERP
+- Web Technologies: HTML5, CSS3, JavaScript (ES6+), PHP, MySQLi
+- Mobile Frameworks: Flutter, Dart
+- Systems Development: C++, SQL Database Performance Tuning
+
+---
+
+## Education
+
+### 1. Professional Bachelor's in Management Sciences
+- **Institution:** Higher Institute of Accounting and Business Administration (ISCAE), Mauritania
+- **Specialization:** Banking & Insurance (Department of Economics, Management & Law)
+
+### 2. High School Baccalaureate in Mathematics
+- **Institution:** Lycée d'Excellence 1, Nouakchott, Mauritania
+- **Description:** Selective state high school admitting top performers in STEM and mathematics.
+
+---
+
+## Certifications
+- **EF SET English:** C2/B2 Proficiency Certificate
+- **Data Analysis:** Open University
+- **Save and Invest:** Grenoble École de Management
+- **Business Growth:** Semrush
+- **Strategic Management**
+- **Liquidity Management**
+
+---
+
+## Personal Interests & Hobbies
+- **Sports:** Founding member of the Al-Badaa sports club in Boutilimit.
+- **Continuous Education:** Active self-learner in fintech, compiler systems, and blockchain cryptography.

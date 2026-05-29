@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://medtahaebbou.github.io/Portfelio/sitemap.xml
